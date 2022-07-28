@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
-  <BrowserRouter>
+  <BrowserRouter basename={'/React-pizza'}>
     <Provider store={store}>
       <App />
     </Provider>
