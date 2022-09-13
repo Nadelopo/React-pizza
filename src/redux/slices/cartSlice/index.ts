@@ -67,6 +67,10 @@ const cartSlice = createSlice({
       delete localStorage.cartItems
       delete localStorage.totalPrice
     },
+    updateData(state) {
+      state.cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]')
+      state.totalPrice = Number(localStorage.getItem('totalPrice'))
+    },
   },
 })
 
@@ -76,6 +80,7 @@ export const {
   cleanCart,
   addOneProduct,
   removeOneProduct,
+  updateData,
 } = cartSlice.actions
 
 export default cartSlice.reducer
