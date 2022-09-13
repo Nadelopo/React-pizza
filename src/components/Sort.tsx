@@ -15,8 +15,8 @@ const nameSort: SortName[] = [
   { name: 'популярности (ASC)', sortProperty: '-rating' },
   { name: 'цене (DESC)', sortProperty: 'price' },
   { name: 'цене (ASC)', sortProperty: '-price' },
-  { name: 'Алфавиту (DESC)', sortProperty: 'title' },
-  { name: 'Алфавиту (ASC)', sortProperty: '-title' },
+  { name: 'алфавиту (DESC)', sortProperty: 'title' },
+  { name: 'алфавиту (ASC)', sortProperty: '-title' },
 ]
 
 const Sort: React.FC = R.memo(() => {

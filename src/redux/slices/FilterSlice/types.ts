@@ -8,10 +8,7 @@ export type TsortProperty =
 
 export interface IfilterSlice {
   categoryId: number
-  sort: {
-    name: string
-    sortProperty: TsortProperty
-  }
+  sort: ISortName
   search: string
   page: number
 }

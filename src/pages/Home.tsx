@@ -49,12 +49,12 @@ export const Home: React.FC = () => {
 
     dispatch(getCountPage({ category, search, limit }))
     window.scrollTo(0, 0)
-  }, [page, limit, categoryId, search, sort, dispatch])
 
-  useEffect(() => {
-    navigate('?page=' + page)
     dispatch(setPage(page))
-  }, [page])
+    navigate(
+      `?page=${page}&category=${categoryId}&sort=${sort.sortProperty}&search=${search}`
+    )
+  }, [page, limit, categoryId, search, sort])
 
   const pizzas = items.map((obj: any) => <PizzaBlock key={obj.id} {...obj} />)
   const skeleton = [...new Array(8)].map((_, index) => <Skeleton key={index} />)

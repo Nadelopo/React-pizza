@@ -1,12 +1,15 @@
 import sls from './Search.module.sass'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { setSearch } from 'redux/slices/FilterSlice'
 import { useEffect, useRef, useState } from 'react'
 import { ReactComponent as SearchSVG } from 'icons/search.svg'
 import { ReactComponent as RemoveSVG } from 'icons/removeSearch.svg'
+import { RootState } from 'redux/store'
 
 const Search: React.FC = () => {
-  const [Search, SetSearch] = useState('')
+  const { search } = useSelector((state: RootState) => state.filter)
+
+  const [Search, SetSearch] = useState(search)
   const dispatch = useDispatch()
   const input = useRef<HTMLInputElement>(null)
   const [timeout, setTimeOut] = useState<any>()
