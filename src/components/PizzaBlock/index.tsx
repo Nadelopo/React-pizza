@@ -20,7 +20,7 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({
   price,
   imageUrl,
   sizes,
-  types,
+  types
 }) => {
   const dispatch = useDispatch()
 
@@ -35,13 +35,17 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({
     imageUrl,
     count: 0,
     activeSize: sizes[activeSize],
-    activeType: typeNames[activeType],
+    activeType: typeNames[activeType]
   }
   return (
     <div className="pizza-block-wrapper">
       <div className="pizza-block">
         <Link to={'pizza/' + id}>
-          <img className="pizza-block__image" src={imageUrl} alt="Pizza" />
+          <img
+            className="pizza-block__image"
+            src="https://media.dodostatic.net/image/r:292x292/11EF9C1DAAFCF3529A62947B9522A8FE.avif"
+            alt="Pizza"
+          />
           <h4 className="pizza-block__title">{title}</h4>
         </Link>
         <div className="pizza-block__selector">
